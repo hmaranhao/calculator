@@ -1,92 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script text="text/javascript" src="./index.js"></script>
     <title>Calculator</title>
 </head>
+
 <body>
     <div class="content">
         <div class="view">
-            <div class="historic">
+            <div class="historic" id="historic">
 
             </div>
             <div class="calc">
-
+                <input type="text" id="calc" />
             </div>
         </div>
         <div class="controls">
-            <div class="button">
-                7
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('7')">
+                    7
+                </div>
+                <span class="tooltiptext">Sete</span>
             </div>
-            <div class="button">
-                8
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('8')">
+                    8
+                </div>
+                <span class="tooltiptext">Oito</span>
             </div>
-            <div class="button">
-                9
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('9')">
+                    9
+                </div>
+                <span class="tooltiptext">Nove</span>
             </div>
-            <div class="button">
-                &divide;
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('/')">
+                    &divide;
+                </div>
+                <span class="tooltiptext">Divisão</span>
             </div>
-            <div class="button">
-                &crarr;
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.clearExpression()">
+                    &crarr;
+                </div>
+                <span class="tooltiptext">Limpar</span>
             </div>
-            <div class="button">
-                C
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.clear()">
+                    C
+                </div>
+                <span class="tooltiptext">Limpar Tudo</span>
             </div>
-            <div class="button">
-                4
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('4')">
+                    4
+                </div>
+                <span class="tooltiptext">Quatro</span>
             </div>
-            <div class="button">
-                5
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('5')">
+                    5
+                </div>
+                <span class="tooltiptext">Cinco</span>
             </div>
-            <div class="button">
-                6
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('6')">
+                    6
+                </div>
+                <span class="tooltiptext">Seis</span>
             </div>
-            <div class="button">
-                x
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('*')">
+                    x
+                </div>
+                <span class="tooltiptext">Multiplicação</span>
             </div>
-            <div class="button">
-                (
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('(')">
+                    (
+                </div>
+                <span class="tooltiptext">Início da Expressão</span>
             </div>
-            <div class="button">
-                )
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange(')')">
+                    )
+                </div>
+                <span class="tooltiptext">Fim da Expressão</span>
             </div>
-            <div class="button">
-                1
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('1')">
+                    1
+                </div>
+                <span class="tooltiptext">Um</span>
             </div>
-            <div class="button">
-                2
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('2')">
+                    2
+                </div>
+                <span class="tooltiptext">Dois</span>
             </div>
-            <div class="button">
-                3
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('3')">
+                    3
+                </div>
+                <span class="tooltiptext">Três</span>
             </div>
-            <div class="button">
-                -
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('-')">
+                    -
+                </div>
+                <span class="tooltiptext">Subtração</span>
             </div>
-            <div class="button">
-                x²
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('²')">
+                    x²
+                </div>
+                <span class="tooltiptext">Potência</span>
             </div>
-            <div class="button">
-                &radic;
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('raiz')">
+                    &radic;
+                </div>
+                <span class="tooltiptext">Raiz Quadrada</span>
             </div>
-            <div class="button">
-                0
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('0')">
+                    0
+                </div>
+                <span class="tooltiptext">Zero</span>
             </div>
-            <div class="button">
-                ,
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('.')">
+                    ,
+                </div>
+                <span class="tooltiptext">Vírgula</span>
             </div>
-            <div class="button">
-                %
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('%')">
+                    %
+                </div>
+                <span class="tooltiptext">Porcento</span>
             </div>
-            <div class="button">
-                +
+            <div class="tooltip">
+                <div class="button" onclick="calculatorControls.handlerChange('+')">
+                    +
+                </div>
+                <span class="tooltiptext">Adição</span>
             </div>
-            <div class="button last">
-                =
+            <div class="tooltip last">
+                <div class="button" onclick="calculatorControls.calc()">
+                    =
+                </div>
+                <span class="tooltiptext">Igual à</span>
             </div>
         </div>
     </div>
 </body>
+
 </html>

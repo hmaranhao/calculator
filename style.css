@@ -4,32 +4,60 @@
     box-sizing: border-box;
 }
 
+:root {
+    --black: black;
+    --orange: #ff8b1e;
+    --white: #fff;
+    --opac: rgba(15, 15, 15, 0.87);
+}
+
+@font-face {
+    font-family: "Digit";
+    src: url(./DS-DIGIT.TTF)
+}
+
 .content {
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-color: var(--black);
     padding: 10px;
 }
 
 .view {
     height: 40%;
-    border: 4px solid #ff8b1e;
+    border: 4px solid var(--orange);
     border-style: double;
     padding: 5px;
 }
 
 .historic {
-    height: 60%;
+    height: 70%;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
 
 .calc {
-    height: 40%;
-    background-color: rgba(15, 15, 15, 0.87);
+    height: 30%;
+    background-color: var(--opac);
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 3em;
+    padding: 5px;
+    text-align: right;
+    font-family: "Digit";
 }
 
 .controls {
     height: 55%;
-    border: 1px solid #ff8b1e;
+    border: 1px solid var(--orange);
     margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -37,21 +65,60 @@
 }
 
 .button {
-    margin: 5px;
-    border: 1px solid #ff8b1e;
-    color: #ff8b1e;
+    border: 1px solid var(--orange);
+    color: var(--orange);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
 .button:hover {
-    border: 1px solid #fff;
-    color: #fff;
-    background-color: #ff8b1e;
+    border: 1px solid var(--white);
+    color: var(--white);
+    background-color: var(--orange);
 }
 
 .last {
     grid-column: span 2;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    font-size: 12px;
+    background-color: var(--black);
+    color: var(--orange);
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid var(--orange);
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--orange) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
