@@ -12,13 +12,19 @@ const calculatorControls = {
     calc: () => {
         const input = document.getElementById('calc')
         const calculed = eval(input.value)
-        document.getElementById('historic').innerHTML += `<div>${input.value} = ${calculed}</div>`
+        document.getElementById('historic').innerHTML += `
+            <div class="historic-item" onClick="calculatorControls.overrideCalc('${input.value}')">
+                ${input.value} = ${calculed}
+            </div>`
         input.value = calculed
     },
     onkeypress: e => {
         if (e.keyCode === 13) {
             calculatorControls.calc()
         }
+    },
+    overrideCalc: value => {
+        document.getElementById('calc').value = value
     }
 }
 

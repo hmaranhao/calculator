@@ -33,9 +33,20 @@
 .historic {
     height: 70%;
     color: var(--white);
+    overflow: auto;
+}
+
+.historic-item {
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.historic-item:hover {
+    background-color: var(--opac);
 }
 
 .calc {
@@ -81,7 +92,7 @@ input {
     background-color: var(--orange);
 }
 
-.last {
+.two {
     grid-column: span 2;
 }
 
